@@ -34,28 +34,28 @@ include_directories(
 add_library(
     xbox_memory
     SHARED
-    Xbox_og/xbox_memory.cpp
+    xbox_memory.cpp
 )
 target_link_libraries(xbox_memory ${log-lib} ${android-lib})
 
 add_library(
     xbox_utils
     SHARED
-    Xbox_og/xbox_utils.cpp
+    xbox_utils.cpp
 )
 target_link_libraries(xbox_utils ${log-lib} ${android-lib})
 
 add_library(
     x86_core
     SHARED
-    Xbox_og/x86_core.cpp
+    x86_core.cpp
 )
 target_link_libraries(x86_core xbox_memory xbox_utils ${log-lib} ${android-lib})
 
 add_library(
     nv2a_renderer
     SHARED
-    Xbox_og/nv2a_renderer.cpp
+    nv2a_renderer.cpp
 )
 target_link_libraries(nv2a_renderer 
     xbox_memory 
@@ -67,8 +67,8 @@ target_link_libraries(nv2a_renderer
 add_library(
     xbox_kernel
     SHARED
-    Xbox_og/xbox_kernel.cpp
-    Xbox_og/memory_allocator.cpp
+    xbox_kernel.cpp
+    memory_allocator.cpp
 )
 target_link_libraries(xbox_kernel 
     xbox_memory 
@@ -81,14 +81,14 @@ target_link_libraries(xbox_kernel
 add_library(
     memory_allocator
     SHARED
-    Xbox_og/memory_allocator.cpp
+    memory_allocator.cpp
 )
 target_link_libraries(memory_allocator ${log-lib} ${android-lib})
 
 add_library(
     xbox_iso_parser
     SHARED
-    Xbox_og/xbox_iso_parser.cpp
+    xbox_iso_parser.cpp
 )
 target_link_libraries(xbox_iso_parser
     xbox_memory
@@ -101,7 +101,7 @@ target_link_libraries(xbox_iso_parser
 add_library(
     xbox_emulator
     SHARED
-    Xbox_og/xbox_emulator.cpp
+    xbox_emulator.cpp
 )
 target_link_libraries(xbox_emulator 
     xbox_memory
